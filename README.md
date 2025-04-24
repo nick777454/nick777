@@ -109,7 +109,7 @@ function checkDevice()
             local FeariseToggle = CreateToggle()
             FeariseToggle.MouseButton1Click:Connect(function()
                 for _, guiObject in ipairs(game:GetService("CoreGui"):GetChildren()) do
-                    if guiObject.Name == "zEEHub" and guiObject:IsA("ScreenGui") then
+                    if guiObject.Name == "NKHub" and guiObject:IsA("ScreenGui") then
                         for FrameIndex, FrameValue in pairs(guiObject:GetChildren()) do
                             if FrameValue:IsA("Frame") and FrameValue:FindFirstChild("CanvasGroup") then
                                 FrameValue.Visible = not FrameValue.Visible
@@ -119,8 +119,8 @@ function checkDevice()
                 end
             end)
             game:GetService("CoreGui").ChildRemoved:Connect(function(Value)
-                if Value.Name == "zEE Hub" then
-                    zEEToggle.Parent.Parent:Destroy()
+                if Value.Name == "NK Hub" then
+                    NKToggle.Parent.Parent:Destroy()
                 end
             end)
             Device = UDim2.fromOffset(480, 360)
@@ -132,7 +132,7 @@ end
 checkDevice()
 
 local FileName = tostring(game.Players.LocalPlayer.UserId).."_Settings.json"
-local BaseFolder = "zEE Hub"
+local BaseFolder = "NK Hub"
 local SubFolder = "BlueLockRivals"
 
 function SaveSetting() 
@@ -169,7 +169,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "zEE Hub VN" .. " | ".."BlueLock : Rival".." | ".."[Version 3]",
+    Title = "NK Hub VN" .. " | ".."BlueLock : Rival".." | ".."[Version 3]",
     SubTitle = "by Rowlet/Blobby",
     TabWidth = 160,
     Size =  Device, --UDim2.fromOffset(480, 360), --default size (580, 460)
@@ -2460,7 +2460,7 @@ do
                         end
                     end)
                     game:GetService("CoreGui").ChildRemoved:Connect(function(Value)
-                        if Value.Name == "zEEHub" then
+                        if Value.Name == "NKHub" then
                             MobileUI.feariseHubMobileUI:Destroy()
                         end
                     end)
